@@ -1,4 +1,9 @@
 # pybacktest
+
+Forked from ematvey/pybacktest, with a few fixes for plotting.
+
+# Original README:
+
 Simple yet powerful backtesting framework in python/pandas.
 
 Currently I don't plan to continue working on this project.
