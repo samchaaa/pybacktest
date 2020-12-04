@@ -189,12 +189,6 @@ class Backtest(object):
         ix = eq.index
         eq.plot(color='red', style='-',ax=ax)
 
-        #eq.plot(color='red', label='strategy',ax=ax)
-        #ix = self.ohlc.ix[eq.index[0]:eq.index[-1]].index
-        #price = self.ohlc.C
-        #(price[ix] - price[ix][0]).resample('W').first().dropna() \
-        #    .plot(color='black', alpha=0.5, label='underlying', ax=ax)
-
         ax.legend(loc='best')
         ax.set_title(str(self))
         ax.set_ylabel('Equity for %s' % subset)
@@ -223,6 +217,6 @@ class Backtest(object):
         ax.plot(sx.index, sx.values, 'o', color='red', markersize=7,
                    label='short exit')
         
-        self.ohlc.O.ix[subset].plot(color='black', label='price', ax=ax)
+        self.ohlc.O.iloc[:, subset].plot(color='black', label='price', ax=ax)
         ax.set_ylabel('Trades for %s' % subset)
         return _,ax
